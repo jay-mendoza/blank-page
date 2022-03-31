@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BLANK SCREEN</title>
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body oncontextmenu="changeColor(); return false;" onclick="toggleScreen();" onkeypress="toggleScreen();">        
+</body>
+
+<style>
+        html {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            border: 1px #606060 dotted;
+            box-sizing: border-box;
+        }
+    
+    </style>
+    <script>
+        changeColor = () => {
+            let color = document.documentElement.style.backgroundColor;
+            document.documentElement.style.backgroundColor = color == `white` ? `black` : `white`;            
+        }
+
+        toggleScreen = () => {
+            if (document.fullscreenElement) {
+               document.exitFullscreen();
+            }
+            else {
+                document.documentElement.requestFullscreen();
+            }        
+        }
+    </script>
+</html>
